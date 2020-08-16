@@ -1,0 +1,31 @@
+version: "3"
+services:
+    server:
+        image: node:latest
+        container_name: mr-gadget-server
+        working_dir: /home/node/app
+        environment: 
+            - DATABASE_URL=mongodb://db-user:db-password@database:27017/dev-database
+            - DEBUG=server:*
+            - PORT=3100
+        volumes:
+            - .:/home/node/app
+        ports:
+            - 3100:3100
+        command: npm run docker:start
+        depends_on: 
+            - database
+    database:
+        image: mongo:latest
+        container_name: mr-gadget-database
+        environment: 
+            - MONGO_INITDB_DATABASE=admin
+            - MONGO_INITDB_ROOT_USERNAME=root
+            - MONGO_INITDB_ROOT_PASSWORD=password
+        volumes:
+            - database-volume:/data/db
+            - ./init-mongo.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+        ports:
+            - '27017:27017'
+volumes:
+    database-volume:
