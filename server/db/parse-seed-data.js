@@ -7,9 +7,9 @@ function createKeyToValueMap(records) {
   const first = data[0];
   data = data.slice(1, data.length);
   return data.map((record) => record.reduce((acc, curr, index) => {
-    const key = first[index].toLowerCase();
+    const key = first[Number.parseInt(index, 10)].toLowerCase();
     if (key !== 'id') {
-      acc[first[index].toLowerCase()] = curr;
+      acc[first[Number.parseInt(index, 10)].toLowerCase()] = curr;
     }
     return acc;
   }, {}));
