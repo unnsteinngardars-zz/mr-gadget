@@ -3,11 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "DEBUG=server:* nodemon ./bin/www",
-    "docker:start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "start:docker": "docker-compose up -d",
+    "stop:docker": "docker-compose down",
+    "migrate:seed": "node_modules/db-migrate/bin/db-migrate up -m ./db/migrations",
+    "migrate:reset": "node_modules/db-migrate/bin/db-migrate reset -m ./db/migrations"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "csv-parse": "^4.12.0",
+    "db-migrate": "^0.11.11",
+    "db-migrate-mongodb": "^1.5.0",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.16.1",

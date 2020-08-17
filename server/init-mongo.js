@@ -13,5 +13,3 @@ db.createUser({
     },
   ],
 });
-
-db.createCollection('gadgets');
