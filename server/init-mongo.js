@@ -1,6 +1,7 @@
-db.auth('root', 'password')
+/* eslint-disable no-undef */
+db.auth('root', 'password');
 
-db = db.getSiblingDB('dev-database')
+db = db.getSiblingDB('dev-database');
 
 db.createUser({
   user: 'db-user',
