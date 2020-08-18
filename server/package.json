@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "nodemon ./bin/www | pino-pretty",
     "start:docker": "docker-compose up -d",
     "stop:docker": "docker-compose down",
     "migrate:seed": "node_modules/db-migrate/bin/db-migrate up -m ./db/migrations",
