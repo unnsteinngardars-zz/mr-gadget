@@ -10,5 +10,6 @@ const gadgetService = new GadgetService({ gadgetRepository });
 const gadgetController = new GadgetController({ gadgetService });
 
 router.get('/', gadgetController.getAllGadgets.bind(gadgetController));
+router.get('/:id', gadgetController.getGadgetById.bind(gadgetController));
 
 module.exports = router;

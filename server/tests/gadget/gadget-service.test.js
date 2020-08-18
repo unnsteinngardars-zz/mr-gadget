@@ -9,9 +9,25 @@ describe('GadgetService', () => {
       const gadgetRepository = {
         getAllGadgets: () => expected,
       };
+
       const gadgetService = new GadgetService({ gadgetRepository });
       const gadgets = await gadgetService.getAllGadgets();
+
       expect(gadgets).to.equal(expected);
+    });
+  });
+  describe('getGadgetById', () => {
+    it('should return a single gadget', async () => {
+      const expected = getMockData()[0];
+      const { id } = expected;
+      const gadgetRepository = {
+        getGadgetById: () => expected,
+      };
+
+      const gadgetService = new GadgetService({ gadgetRepository });
+      const gadget = await gadgetService.getGadgetById(id);
+
+      expect(gadget).to.equal(expected);
     });
   });
 });
