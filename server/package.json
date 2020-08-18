@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www | pino-pretty",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha tests/**/*test.js",
     "start:docker": "docker-compose up -d",
     "stop:docker": "docker-compose down",
     "migrate:seed": "node_modules/db-migrate/bin/db-migrate up -m ./db/migrations",
@@ -25,10 +26,14 @@
     "pino-pretty": "^4.1.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^7.7.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-security": "^1.4.0",
-    "nodemon": "^2.0.4"
+    "mocha": "^8.1.1",
+    "nodemon": "^2.0.4",
+    "sinon": "^9.0.3"
   }
 }
