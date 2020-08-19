@@ -1,6 +1,10 @@
+const AppError = require('../../shared/error-management/app-error');
+const errorOptions = require('../../shared/error-management/error-options/http-error-options');
+
 class GadgetService {
   constructor(dependencies) {
     this.gadgetRepository = dependencies.gadgetRepository;
+    this.Validator = dependencies.Validator;
   }
 
   async getAllGadgets() {
@@ -9,8 +13,11 @@ class GadgetService {
   }
 
   async getGadgetById(id) {
-    const gadget = await this.gadgetRepository.getGadgetById(id);
-    return gadget;
+    if (this.Validator.validateObjectId(id)) {
+      const gadget = await this.gadgetRepository.getGadgetById(id);
+      return gadget;
+    }
+    throw new AppError(errorOptions.invalidObjectId);
   }
 }
 

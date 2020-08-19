@@ -17,17 +17,25 @@ describe('GadgetService', () => {
     });
   });
   describe('getGadgetById', () => {
-    it('should return a single gadget', async () => {
+    it('should return a single gadget when the id is a valid ObjectId', async () => {
       const expected = getMockData()[0];
       const { id } = expected;
       const gadgetRepository = {
         getGadgetById: () => expected,
       };
+      const Validator = {
+        validateObjectId: () => true,
+      };
 
-      const gadgetService = new GadgetService({ gadgetRepository });
+      const gadgetService = new GadgetService({ gadgetRepository, Validator });
       const gadget = await gadgetService.getGadgetById(id);
 
       expect(gadget).to.equal(expected);
+    });
+
+    it.skip('should throw an error when the id is an invalid ObjectId', async () => {
+      // TODO: Find a solution, there is something not working correctly when asserting
+      // a custom extended error in chai
     });
   });
 });

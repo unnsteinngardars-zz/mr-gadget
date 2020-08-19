@@ -10,8 +10,14 @@ class GadgetController {
 
   async getGadgetById(req, res) {
     const { params: { id } } = req;
-    const gadget = await this.gadgetService.getGadgetById(id);
-    return res.send(gadget);
+    try {
+      const gadget = await this.gadgetService.getGadgetById(id);
+      return res.send(gadget);
+    } catch (error) {
+      const { statusCode, description } = error;
+      res.statusCode = statusCode;
+      return res.send({ id, description });
+    }
   }
 }
 
