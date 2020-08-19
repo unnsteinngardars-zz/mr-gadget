@@ -1,0 +1,23 @@
+{
+  "name": "mr-gadget",
+  "version": "1.0.0",
+  "description": "Assignment for Salt Pay",
+  "main": "init-mongo.js",
+  "scripts": {
+    "start": "docker-compose up",
+    "start:d": "docker-compose up -d",
+    "install": "cd server && npm install && cd ../client && npm install && cd ..",
+    "migrate:seed": "server/node_modules/db-migrate/bin/db-migrate up --config server/database.json -m server/db/migrations",
+    "migrate:reset": "server/node_modules/db-migrate/bin/db-migrate reset --config server/database.json -m server/db/migrations"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unnsteinngardars/mr-gadget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unnsteinngardars/mr-gadget/issues"
+  },
+  "homepage": "https://github.com/unnsteinngardars/mr-gadget#readme"
+}

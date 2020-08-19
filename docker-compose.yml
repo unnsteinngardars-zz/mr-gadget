@@ -1,5 +1,17 @@
-version: "3"
+version: '3'
 services:
+    client:
+        image: node:latest
+        container_name: mr-gadget-client
+        working_dir: /home/node/app
+        volumes:
+            - ./client:/home/node/app
+        ports:
+            - 3000:3000/tcp
+        command: npm run start
+        depends_on: 
+            - server
+        stdin_open: true
     server:
         image: node:latest
         container_name: mr-gadget-server
@@ -9,7 +21,7 @@ services:
             - DEBUG=server:*
             - PORT=3100
         volumes:
-            - .:/home/node/app
+            - ./server:/home/node/app
         ports:
             - 3100:3100/tcp
         command: npm run start
@@ -27,6 +39,6 @@ services:
             - database-volume:/data/db
             - ./init-mongo.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
         ports:
-            - '27019:27017/tcp'
+            - 27019:27017/tcp
 volumes:
     database-volume:

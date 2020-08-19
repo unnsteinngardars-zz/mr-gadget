@@ -16,7 +16,8 @@ function createKeyToValueMap(records) {
 }
 
 async function getSeedData() {
-  const content = await fs.readFile('./db/seed-data.csv');
+  // eslint-disable-next-line security/detect-non-literal-fs-filename
+  const content = await fs.readFile(`${__dirname}/seed-data.csv`);
   let records = parse(content);
   records = createKeyToValueMap(records);
   debug(`Successfully parsed ${records.length} entries of seed data`);
