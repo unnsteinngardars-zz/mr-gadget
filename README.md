@@ -27,4 +27,17 @@ and `npm run migrate:reset` to reset the database
 Both commands are also available within the `server` directory
 
 ## Possible pitfalls
+
+### Mongo
 It might be the case that port `27019` is already bound on your localhost, if so you need to free it up since the migration tool needs to connect to the database from the host
+
+### Eslint
+
+For VS code users using eslint, there could be issues with the linter in the client, to solve this add the following to your `settings.json` file at the root of the repository
+
+```json
+    "eslint.workingDirectories": [
+      "client",
+      "server"
+    ]
+```

@@ -1,0 +1,17 @@
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-container > div {
+    font-family: Bangers;
+    color: #002B3A;
+    font-size: 36pt;
+    margin-right: 150px;
+    text-align: center;
+}
+
+.logo-container:hover {
+    cursor: pointer;
+}

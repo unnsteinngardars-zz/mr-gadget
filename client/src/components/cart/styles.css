@@ -1,0 +1,16 @@
+.cart-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+.cart-container:hover {
+    cursor: pointer;
+}
+
+.cart-icon {
+    font-size: 48px;
+    vertical-align: middle;
+    height: 100%;
+}
