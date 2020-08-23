@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import GadgetListItem from './gadget-list-item';
+import Loader from '../../components/loader';
 import './styles.css';
 
 class GadgetList extends Component {
@@ -21,7 +22,7 @@ class GadgetList extends Component {
   // eslint-disable-next-line class-methods-use-this
   renderLoading() {
     return (
-      <div>Loading</div>
+      <div className="gadget-list-loader"><Loader /></div>
     );
   }
 

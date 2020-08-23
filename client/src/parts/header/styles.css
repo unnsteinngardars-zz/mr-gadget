@@ -1,13 +1,7 @@
 .header-container {
-    height: 120px;
-    background-color: #00B2CA;
+    background-color: lightcoral;
     position: sticky;
     top: 0;
-}
-
-.header-navigation {
     display: flex;
-    flex-direction: row;
-    align-content: center;
     padding: 30px 20px;
 }

@@ -1,0 +1,14 @@
+.button-container > button {
+    background-color: lightcoral;
+    border: 1px solid transparent;
+    color: white;
+    padding: 5px;
+}
+
+.button-container > button:hover {
+    background-color: white;
+    border: 1px solid lightcoral;
+    color: lightcoral;
+    padding: 5px;
+    cursor: pointer;
+}

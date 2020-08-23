@@ -12,18 +12,20 @@ import Footer from './parts/footer';
 
 function App() {
   return (
-    <Provider store={store}>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/gadgets" component={GadgetList} />
-          <Route exact path="/gadgets/:id" component={GadgetListDetails} />
-          <Route exact path="/cart" component={CartList} />
-          <Route component={NotFound} />
-        </Switch>
-        <Footer />
-      </Router>
-    </Provider>
+    <div className="app-container">
+      <Provider store={store}>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/gadgets" component={GadgetList} />
+            <Route exact path="/gadgets/:id" component={GadgetListDetails} />
+            <Route exact path="/cart" component={CartList} />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </Router>
+      </Provider>
+    </div>
   );
 }
 

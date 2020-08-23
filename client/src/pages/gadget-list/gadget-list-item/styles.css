@@ -1,0 +1,30 @@
+.gadget-list-item-container {
+    height: 300px;
+    width: 250px;
+    margin: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.gadget-list-item-image {
+    height: 50%;
+}
+
+.gadget-list-item-details-add-to-cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.gadget-list-item-details-link {
+    text-decoration: none;
+    color: lightcoral;
+}
+
+.gadget-list-item-details-link:hover {
+    text-decoration-line: underline;
+    text-decoration-color: black;
+}

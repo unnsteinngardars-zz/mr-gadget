@@ -1,8 +1,5 @@
 .footer-container {
-    height: 40px;
-    position: sticky;
-    bottom: 0;
-    background-color: #00B2CA;
+    background-color: lightcoral;
     display: flex;
     justify-content: center;
 }

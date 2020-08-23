@@ -4,14 +4,17 @@
     justify-content: center;
 }
 
-.logo-container > div {
+.logo-container:hover {
+    cursor: pointer;
+}
+
+.logo-text {
     font-family: Bangers;
     color: #002B3A;
     font-size: 36pt;
     margin-right: 150px;
-    text-align: center;
 }
 
-.logo-container:hover {
-    cursor: pointer;
+.logo-link:link {
+    text-decoration: none;
 }

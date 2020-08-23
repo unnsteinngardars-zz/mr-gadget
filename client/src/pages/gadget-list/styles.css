@@ -1,4 +1,19 @@
 .gadget-list-container {
-    height: 100vh;
     overflow: scroll;
+    position: relative;
+}
+
+.gadget-list-loader {
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gadget-list {
+    /* background-color: lightsalmon; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
