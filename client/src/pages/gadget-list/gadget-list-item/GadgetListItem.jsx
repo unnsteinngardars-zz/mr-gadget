@@ -1,15 +1,15 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import Button from '../../../components/button';
+import gadgetPropType from '../../../proptypes/gadget';
 import './styles.css';
 
 const getImageStyle = ({ image }) => ({
   background: `center no-repeat url('${image}')`,
 });
 
-const GadgetListItem = ({ gadget }) => (
+const GadgetListItem = ({ gadget, onClickDetails }) => (
   <div className="gadget-list-item-container">
     <div style={getImageStyle(gadget)} className="gadget-list-item-image" />
     <div>
@@ -19,14 +19,15 @@ const GadgetListItem = ({ gadget }) => (
       <strong>{gadget.price}</strong>
     </div>
     <div className="gadget-list-item-details-add-to-cart">
-      <Link className="gadget-list-item-details-link" to={`/gadgets/${gadget._id}`}><strong>Details</strong></Link>
+      <Button onClick={() => onClickDetails(gadget)}>Details</Button>
       <Button>Add to cart</Button>
     </div>
   </div>
 );
 
 GadgetListItem.propTypes = {
-  gadget: PropTypes.object,
+  gadget: gadgetPropType.isRequired,
+  onClickDetails: PropTypes.func.isRequired,
 };
 
 export default GadgetListItem;
