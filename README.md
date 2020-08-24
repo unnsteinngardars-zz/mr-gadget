@@ -33,11 +33,38 @@ It might be the case that port `27019` is already bound on your localhost, if so
 
 ### Eslint
 
-For VS code users using eslint, there could be issues with the linter in the client, to solve this add the following to your `settings.json` file at the root of the repository
+For VS code users using eslint, since the two projects are in the same root, there could be issues with the linter in one of the two projects, to solve this add the following to your `settings.json` file at the root of the repository
 
 ```json
     "eslint.workingDirectories": [
       "client",
       "server"
     ]
+```
+
+### VS Code
+
+## An example settings.json file for the current project
+
+```json
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.workingDirectories": [
+      "client",
+      "server"
+    ]
+}
 ```
