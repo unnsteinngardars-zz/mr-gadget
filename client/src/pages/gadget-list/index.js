@@ -12,6 +12,7 @@ const mapStateToProps = ({ gadgets, searchString }) => {
     : gadgets;
   return {
     gadgets: filteredGadgets,
+    searchString,
   };
 };
 

@@ -8,11 +8,7 @@ import gadgetPropType from '../../proptypes/gadget';
 import FlashNotification from '../../components/flash-notification';
 import './styles.css';
 
-const renderLoading = () => (
-  <div className="gadget-list-loader"><Loader /></div>
-);
-
-const GadgetList = ({ getAllGadgets, gadgets }) => {
+const GadgetList = ({ getAllGadgets, gadgets, searchString }) => {
   const [detailedGadget, setDetailedGadget] = useState({});
   const [isModalOpen, setModalStatus] = useState(false);
   const [isNotificationOn, setNotification] = useState(false);
@@ -21,10 +17,30 @@ const GadgetList = ({ getAllGadgets, gadgets }) => {
     getAllGadgets();
   }, []);
 
-  function renderGadgets(gadgetsToRender) {
+  function renderLoading() {
+    return (
+      <div className="gadget-list-loader"><Loader /></div>
+    );
+  }
+
+  function renderNoResults() {
+    return (
+      <div className="gadget-list-not-found">
+        No results for
+        {' '}
+        <strong>
+          <em>
+            {searchString}
+          </em>
+        </strong>
+      </div>
+    );
+  }
+
+  function renderGadgets() {
     return (
       <div className="gadget-list">
-        {gadgetsToRender.map((gadget) => (
+        {gadgets.map((gadget) => (
           <GadgetListItem
             onClickDetails={(gadgetToDetail) => {
               setDetailedGadget(gadgetToDetail);
@@ -41,9 +57,20 @@ const GadgetList = ({ getAllGadgets, gadgets }) => {
       </div>
     );
   }
+
+  function renderData() {
+    if (!gadgets.length && searchString !== '') {
+      return renderNoResults();
+    }
+    if (gadgets.length) {
+      return renderGadgets();
+    }
+    return renderLoading();
+  }
+
   return (
     <div className="gadget-list-container">
-      {gadgets.length ? renderGadgets(gadgets) : renderLoading()}
+      {renderData()}
       <Modal
         id="gadget-details-modal"
         isOpen={isModalOpen}

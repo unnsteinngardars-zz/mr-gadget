@@ -13,7 +13,14 @@ const GadgetListItem = ({
   gadget, onClickDetails, addToCart, signalAddedGadget,
 }) => (
   <div className="gadget-list-item-container">
-    <div style={getImageStyle(gadget)} className="gadget-list-item-image" />
+    <div
+      label="gadget list image"
+      aria-hidden
+      role="button"
+      onClick={() => onClickDetails(gadget)}
+      style={getImageStyle(gadget)}
+      className="gadget-list-item-image"
+    />
     <div>
       {gadget.name}
     </div>

@@ -4,7 +4,7 @@ import './styles.css';
 
 const Logo = () => (
   <div className="logo-container">
-    <Link className="logo-link" to="/gadgets">
+    <Link className="logo-link" to="/">
       <div className="logo-text">Mr Gadget</div>
     </Link>
   </div>

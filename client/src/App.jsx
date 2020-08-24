@@ -8,7 +8,6 @@ import GadgetList from './pages/gadget-list';
 import CartList from './pages/cart-list';
 import NotFound from './pages/not-found';
 import Header from './parts/header';
-import Footer from './parts/footer';
 
 function App() {
   return (
@@ -18,11 +17,10 @@ function App() {
           <Router>
             <Header />
             <Switch>
-              <Route exact path="/gadgets" component={GadgetList} />
+              <Route exact path="/" component={GadgetList} />
               <Route exact path="/cart" component={CartList} />
               <Route component={NotFound} />
             </Switch>
-            <Footer />
           </Router>
         </PersistGate>
       </Provider>

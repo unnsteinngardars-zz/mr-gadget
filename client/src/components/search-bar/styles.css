@@ -7,9 +7,9 @@
 .search-bar-input{
     width: 300px;
     border: 2px transparent;
-    border-radius: 15px;
-    padding: 5px 10px;
-    font-size: 16pt;
+    border-radius: 10px;
+    padding: 12px 10px;
+    font-size: 10pt;
 }
 
 .search-bar-input:focus {
@@ -17,10 +17,6 @@
 }
 
 .search-bar-icon {
-    font-size: 60px;
+    font-size: 36px;
     color: #002B3A;
-}
-
-.search-bar-icon:hover {
-    cursor: pointer;
 }

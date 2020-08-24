@@ -13,6 +13,10 @@
     height: 50%;
 }
 
+.gadget-list-item-image:hover {
+    cursor: pointer;
+}
+
 .gadget-list-item-details-add-to-cart {
     display: flex;
     flex-direction: row;
@@ -21,7 +25,7 @@
 
 .gadget-list-item-details-link {
     text-decoration: none;
-    color: lightcoral;
+    color: var(--main-color);
 }
 
 .gadget-list-item-details-link:hover {

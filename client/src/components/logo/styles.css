@@ -9,8 +9,8 @@
 }
 
 .logo-text {
-    font-family: Bangers;
-    color: #002B3A;
+    font-family: var(--main-font);
+    color: black;
     font-size: 36pt;
     margin-right: 150px;
 }

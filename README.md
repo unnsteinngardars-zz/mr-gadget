@@ -14,7 +14,7 @@ running `npm run install`
 
 ## Run the application
 
-Run `npm run start` to start the docker containers \
+From the root of the project, run `npm run start` to start the docker containers \
 or `npm run start:d` to start the docker containers in detached mode
 
 ## Seed data

@@ -11,7 +11,7 @@
     border: 10px solid transparent;
     border-radius: 50%;
     border: 10px solid transparent;
-    border-top: 10px solid lightcoral;
+    border-top: 10px solid var(--main-color);
     animation: rotate 1.3s ease-in-out infinite forwards;
 }
 

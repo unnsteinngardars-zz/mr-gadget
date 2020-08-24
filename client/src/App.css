@@ -1,5 +1,5 @@
 .app-container {
     height: 100vh;
     display: grid;
-    grid-template-rows: 10% auto 5%;
+    grid-template-rows: 10% auto;
 }

@@ -18,7 +18,6 @@ const SearchBar = ({ setSearchString }) => (
       className="search-bar-icon material-icons"
     >
       search
-
     </span>
   </div>
 );
