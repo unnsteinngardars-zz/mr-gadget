@@ -1,0 +1,22 @@
+.gadget-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gadget-details-inner-container-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.gadget-details-inner-container-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gadget-details-price {
+    font-size: 16pt;
+}

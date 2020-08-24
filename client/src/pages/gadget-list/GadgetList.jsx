@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import GadgetListItem from './gadget-list-item';
+import GadgetListItem from '../../components/gadget-list-item';
 import Loader from '../../components/loader';
 import Modal from '../../components/modal';
-import GadgetDetails from '../gadget-details';
-
+import GadgetDetails from '../../components/gadget-details';
+import gadgetPropType from '../../proptypes/gadget';
+import FlashNotification from '../../components/flash-notification';
 import './styles.css';
 
 const renderLoading = () => (
@@ -12,21 +13,27 @@ const renderLoading = () => (
 );
 
 const GadgetList = ({ getAllGadgets, gadgets }) => {
-  const [detailedGadget, setGadget] = useState({});
+  const [detailedGadget, setDetailedGadget] = useState({});
   const [isModalOpen, setModalStatus] = useState(false);
+  const [isNotificationOn, setNotification] = useState(false);
+
   useEffect(() => {
     getAllGadgets();
   }, []);
 
-  function renderGadgets(gadgets) {
+  function renderGadgets(gadgetsToRender) {
     return (
       <div className="gadget-list">
-        {gadgets.map((gadget) => (
+        {gadgetsToRender.map((gadget) => (
           <GadgetListItem
             onClickDetails={(gadgetToDetail) => {
-              setGadget(gadgetToDetail);
+              setDetailedGadget(gadgetToDetail);
               setModalStatus(true);
             }}
+            signalAddedGadget={() => {
+              setNotification(true);
+            }}
+            // eslint-disable-next-line no-underscore-dangle
             key={gadget._id}
             gadget={gadget}
           />
@@ -45,13 +52,24 @@ const GadgetList = ({ getAllGadgets, gadgets }) => {
       >
         <GadgetDetails gadget={detailedGadget} />
       </Modal>
+
+      { isNotificationOn && (
+      <FlashNotification
+        time={3000}
+        onTimeOut={() => {
+          setNotification(false);
+        }}
+      >
+        <div>Item successfully added to cart</div>
+      </FlashNotification>
+      )}
     </div>
   );
 };
 
 GadgetList.propTypes = {
-  gadgets: PropTypes.array,
-  getAllGadgets: PropTypes.func,
+  gadgets: PropTypes.arrayOf(gadgetPropType).isRequired,
+  getAllGadgets: PropTypes.func.isRequired,
 };
 
 export default GadgetList;

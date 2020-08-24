@@ -1,6 +1,5 @@
 .gadget-list-container {
     overflow: scroll;
-    position: relative;
 }
 
 .gadget-list-loader {

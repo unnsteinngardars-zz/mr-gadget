@@ -1,15 +1,17 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../../../components/button';
-import gadgetPropType from '../../../proptypes/gadget';
+import Button from '../button';
+import gadgetPropType from '../../proptypes/gadget';
 import './styles.css';
 
 const getImageStyle = ({ image }) => ({
   background: `center no-repeat url('${image}')`,
 });
 
-const GadgetListItem = ({ gadget, onClickDetails }) => (
+const GadgetListItem = ({
+  gadget, onClickDetails, addToCart, signalAddedGadget,
+}) => (
   <div className="gadget-list-item-container">
     <div style={getImageStyle(gadget)} className="gadget-list-item-image" />
     <div>
@@ -20,7 +22,13 @@ const GadgetListItem = ({ gadget, onClickDetails }) => (
     </div>
     <div className="gadget-list-item-details-add-to-cart">
       <Button onClick={() => onClickDetails(gadget)}>Details</Button>
-      <Button>Add to cart</Button>
+      <Button onClick={() => {
+        addToCart(gadget);
+        signalAddedGadget(gadget);
+      }}
+      >
+        Add to cart
+      </Button>
     </div>
   </div>
 );
@@ -28,6 +36,7 @@ const GadgetListItem = ({ gadget, onClickDetails }) => (
 GadgetListItem.propTypes = {
   gadget: gadgetPropType.isRequired,
   onClickDetails: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default GadgetListItem;

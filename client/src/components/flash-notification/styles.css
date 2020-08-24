@@ -1,0 +1,23 @@
+.flash-notification-container {
+    background-color: lightgreen;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 150%);
+    padding: 20px 40px;
+    animation: enter-exit 6s ease-in;
+    display: flex;
+    justify-items: center;
+}
+
+.flash-notification-children {
+    color: white;
+    font-weight: bold;
+}
+
+@keyframes enter-exit {
+    0% { transform: translate(-50%, 150%); }
+    20% { transform: translate(-50%, -20%); }
+    90% { transform: translate(-50%, -20%); }
+    100% { transform: translate(-50%, 150%); }
+}
