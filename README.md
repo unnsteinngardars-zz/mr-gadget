@@ -1,5 +1,6 @@
-# mr-gadget
-Assignment for Salt Pay
+# Mr Gadget
+
+An assignment for Salt Pay
 
 ## Install Docker
 
@@ -7,10 +8,9 @@ You find instructions on how to install docker [here](https://docs.docker.com/ge
 
 ## Install dependencies
 
-Dependencies can be installed in both `server` and `client` by running npm install \
+Dependencies can be installed in both `server` and `client` by running npm install
 
-Or you can install all of them from the root by 
-running `npm run install`
+Or you can install all of them from the root by running `npm run install`
 
 ## Run the application
 
@@ -42,7 +42,7 @@ For VS code users using eslint, since the two projects are in the same root, the
     ]
 ```
 
-### VS Code
+## Extra information
 
 ## An example settings.json file for the current project
 
@@ -68,3 +68,21 @@ For VS code users using eslint, since the two projects are in the same root, the
     ]
 }
 ```
+
+## What I know that needs to be done
+
+Unfortunately I do not have more time to spend in this but these are some things that I would consider next steps.
+
+### Server
+* Use the appropriate headers to inform the client if he has the most up to date data
+* Friendly response when a gadget was not found
+* Possibly adapt the api to support HATEOAS
+* Add elastic search to improve the search
+
+### Client
+* Make responsive for tablet/mobile
+* Write e2e tests with Cypress for happy paths
+
+### Both
+* Add CircleCI or some other CI/CD pipeline
+* Set up Husky to prevent commits that do not pass the linter, also set up hook for running tests before pushing
