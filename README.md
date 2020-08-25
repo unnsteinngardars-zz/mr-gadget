@@ -76,12 +76,17 @@ Unfortunately I do not have more time to spend in this but these are some things
 ### Server
 * Use the appropriate headers to inform the client if he has the most up to date data
 * Friendly response when a gadget was not found
-* Possibly adapt the api to support HATEOAS
+* Possibly adapt the api to fulfill HATEOAS
 * Add elastic search to improve the search
 
 ### Client
 * Make responsive for tablet/mobile
 * Write e2e tests with Cypress for happy paths
+* Have filters like selecting categories and body location
+* Ability to order page by price/name ascending/descending
+* Pagination or something like [react-window](https://www.npmjs.com/package/react-window)
+* A component showing how many items are in the cart
+* Proper error handling when requests to backend fail
 
 ### Both
 * Add CircleCI or some other CI/CD pipeline
