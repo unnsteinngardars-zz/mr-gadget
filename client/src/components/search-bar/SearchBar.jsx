@@ -2,10 +2,11 @@ import React from 'react';
 import './styles.css';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({ setSearchString }) => (
-  <div className="search-bar-container">
+const SearchBar = ({ searchString, setSearchString }) => (
+  <div data-testid="search-bar" className="search-bar-container">
     <span>
       <input
+        value={searchString}
         onChange={(e) => {
           setSearchString(e.target.value);
         }}
@@ -24,6 +25,7 @@ const SearchBar = ({ setSearchString }) => (
 
 SearchBar.propTypes = {
   setSearchString: PropTypes.func.isRequired,
+  searchString: PropTypes.string.isRequired,
 };
 
 export default SearchBar;

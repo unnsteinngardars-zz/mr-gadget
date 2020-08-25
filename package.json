@@ -6,6 +6,8 @@
   "scripts": {
     "start": "docker-compose up",
     "start:d": "docker-compose up -d",
+    "test:client": "cd client && npm run test",
+    "test:server": "cd server && npm run test",
     "install": "cd server && npm install && cd ../client && npm install && cd ..",
     "migrate:seed": "server/node_modules/db-migrate/bin/db-migrate up --config server/database.json -m server/db/migrations",
     "migrate:reset": "server/node_modules/db-migrate/bin/db-migrate reset --config server/database.json -m server/db/migrations"

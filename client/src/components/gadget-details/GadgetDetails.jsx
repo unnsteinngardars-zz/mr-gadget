@@ -6,7 +6,7 @@ import gadgetPropType from '../../proptypes/gadget';
 const GadgetDetails = ({ gadget }) => (
   <div className="gadget-details-container">
     <div className="gadget-details-inner-container-top">
-      <img src={gadget.image} alt="" />
+      <img src={gadget.image} alt={`${gadget.name}`} />
       <div className="gadget-details-price">
         <strong>
           {gadget.price}

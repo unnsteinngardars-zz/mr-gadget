@@ -13,6 +13,6 @@ export const getAllGadgets = () => async (dispatch) => {
     const { data } = gadgets;
     dispatch(getAllGadgetsToDispatch(data));
   } catch (error) {
-    dispatch({ type: ERROR, payload: GET_ALL_GADGETS });
+    throw new Error('Could not fetch gadgets');
   }
 };

@@ -1,5 +1,6 @@
 .gadget-list-container {
-    overflow: scroll;
+    overflow: auto;
+
 }
 
 .gadget-list-loader {
@@ -18,9 +19,9 @@
 }
 
 .gadget-list {
-    /* background-color: lightsalmon; */
+    margin: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }

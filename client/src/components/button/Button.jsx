@@ -3,7 +3,7 @@ import './styles.css';
 import PropTypes from 'prop-types';
 
 const Button = ({ children, onClick }) => (
-  <div className="button-container">
+  <div data-testid="button" className="button-container">
     <button type="button" onClick={() => onClick()}>
       {children}
     </button>

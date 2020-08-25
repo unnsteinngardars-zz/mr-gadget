@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
@@ -22,11 +20,21 @@ const Modal = ({
   });
 
   return isOpen ? (
-    <div id={id} className="modal-container">
+    <div data-testid="modal" id={id} className="modal-container">
       <div className="modal-content">
         <div className="modal-title-bar">
           <span className="modal-title">{title}</span>
-          <span onClick={onClose} className="modal-close-icon material-icons">
+          <span
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                onClose();
+              }
+            }}
+            tabIndex={0}
+            role="button"
+            onClick={onClose}
+            className="modal-close-icon material-icons"
+          >
             close
           </span>
         </div>

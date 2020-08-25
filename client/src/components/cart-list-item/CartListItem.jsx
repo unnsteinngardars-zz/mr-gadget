@@ -37,6 +37,8 @@ const CartListItem = ({
 CartListItem.propTypes = {
   gadget: gadgetPropType.isRequired,
   onClickDetails: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
+  signalDeletedGadget: PropTypes.func.isRequired,
 };
 
 export default CartListItem;

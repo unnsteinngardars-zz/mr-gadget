@@ -1,8 +1,8 @@
 .gadget-list-item-container {
     height: 300px;
     width: 250px;
-    margin: 15px;
-    padding: 15px;
+    /* margin: 15px; */
+    padding: 40px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -10,7 +10,7 @@
 }
 
 .gadget-list-item-image {
-    height: 50%;
+    object-fit: contain;
 }
 
 .gadget-list-item-image:hover {

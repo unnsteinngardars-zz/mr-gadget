@@ -39,7 +39,7 @@ const GadgetList = ({ getAllGadgets, gadgets, searchString }) => {
 
   function renderGadgets() {
     return (
-      <div className="gadget-list">
+      <div data-testid="gadget-list" className="gadget-list">
         {gadgets.map((gadget) => (
           <GadgetListItem
             onClickDetails={(gadgetToDetail) => {
@@ -97,6 +97,7 @@ const GadgetList = ({ getAllGadgets, gadgets, searchString }) => {
 GadgetList.propTypes = {
   gadgets: PropTypes.arrayOf(gadgetPropType).isRequired,
   getAllGadgets: PropTypes.func.isRequired,
+  searchString: PropTypes.string.isRequired,
 };
 
 export default GadgetList;
