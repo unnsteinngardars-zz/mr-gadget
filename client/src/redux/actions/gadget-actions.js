@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
-import { GET_ALL_GADGETS, ERROR } from '../../constants/redux-constants';
+import { GET_ALL_GADGETS } from '../../constants/redux-constants';
 
 const getAllGadgetsToDispatch = (gadgets) => ({
   type: GET_ALL_GADGETS,
